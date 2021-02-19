@@ -9,15 +9,15 @@
     <script type="text/javascript">
         function encode() {
             thebox = document.getElementById("textbox");
-            thebox.value = encodeURI(thebox.value).replace(/[!'()*]/g, x => `%${x.charCodeAt(0).toString(16).toUpperCase()}`);
+            thebox.value = encodeURI(thebox.value).replaceAll("%25", "%").replace(/[!'()*]/g, x => `%${x.charCodeAt(0).toString(16).toUpperCase()}`);
         }
         function decode() {
-        	thebox = document.getElementById("textbox");
-        	thebox.value = decodeURI(thebox.value);
+            thebox = document.getElementById("textbox");
+            thebox.value = decodeURI(thebox.value);
         }
         function clearBox() {
-        	thebox = document.getElementById("textbox");
-        	thebox.value = "";
+            thebox = document.getElementById("textbox");
+            thebox.value = "";
         }
     </script>
 
